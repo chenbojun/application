@@ -1,13 +1,13 @@
-package com.example.hzchenbojun.myapplication.ViewModel;
+package com.example.hzchenbojun.myapplication.presenter;
 
 import android.app.Activity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.hzchenbojun.myapplication.Models.Book;
-import com.example.hzchenbojun.myapplication.Network.DemoApi;
+import com.example.hzchenbojun.myapplication.bean.Book;
+import com.example.hzchenbojun.myapplication.network.DemoApi;
 import com.example.hzchenbojun.myapplication.R;
-import com.example.hzchenbojun.myapplication.Util.NetUtil;
+import com.example.hzchenbojun.myapplication.util.NetUtil;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;

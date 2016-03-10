@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.myapplication.Models;
+package com.example.hzchenbojun.myapplication.bean;
 
 /**
  * Created by hzchenbojun on 2016/3/9.

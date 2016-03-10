@@ -1,14 +1,13 @@
-package com.example.hzchenbojun.myapplication;
+package com.example.hzchenbojun.myapplication.view;
 
-import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.hzchenbojun.myapplication.ViewModel.BookManager;
-import com.example.hzchenbojun.myapplication.databinding.TestBinding;
+import com.example.hzchenbojun.myapplication.R;
+import com.example.hzchenbojun.myapplication.presenter.BookManager;
 
 public class MainActivity extends AppCompatActivity {
     private EditText bookidTextView;

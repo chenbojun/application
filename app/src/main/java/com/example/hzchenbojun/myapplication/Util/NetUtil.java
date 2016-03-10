@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.myapplication.Util;
+package com.example.hzchenbojun.myapplication.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

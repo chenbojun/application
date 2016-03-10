@@ -1,6 +1,6 @@
-package com.example.hzchenbojun.myapplication.Network;
+package com.example.hzchenbojun.myapplication.network;
 
-import com.example.hzchenbojun.myapplication.Models.Book;
+import com.example.hzchenbojun.myapplication.bean.Book;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

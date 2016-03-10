@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.myapplication.Models;
+package com.example.hzchenbojun.myapplication.bean;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
