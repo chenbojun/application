@@ -44,7 +44,6 @@ public class BookManager {
 
     public void getBookById(String book_id) {
         ImageView imageView = (ImageView)activity.findViewById(R.id.imageView);
-        imageView.setImageBitmap(null);
         Call<Book> call = demoApi.getResult(book_id);
         call.enqueue(new Callback<Book>() {
             @Override
@@ -98,10 +97,11 @@ public class BookManager {
         int cacheSize = 10 * 1024 * 1024;
         Cache cache = new Cache(httpCacheDirectory, cacheSize);
         //Setup client
-        OkHttpClient client = new OkHttpClient();
-        //client.newBuilder().cache(cache);
-        //client.networkInterceptors().add(REWRITE_CACHE_CONTROL_INTERCEPTOR);
-
+        OkHttpClient client = new OkHttpClient
+                .Builder()
+                .cache(cache)
+                .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
+                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .client(client)
                 .baseUrl("https://api.douban.com")
