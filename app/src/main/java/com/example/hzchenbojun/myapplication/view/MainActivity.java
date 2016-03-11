@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.hzchenbojun.myapplication.R;
 import com.example.hzchenbojun.myapplication.bean.Book;
-import com.example.hzchenbojun.myapplication.presenter.BookManager;
+import com.example.hzchenbojun.myapplication.presenter.UserPresenter;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity implements IUserView{
@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity implements IUserView{
     private ImageView imageView;
     private TextView textView;
 
+    private UserPresenter userPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        userPresenter = new UserPresenter(this);
         initView();
 
     }
@@ -30,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements IUserView{
     private void initView() {
         bookidTextView = (EditText) findViewById(R.id.bookID);
         checkButton = (Button)findViewById(R.id.button);
+        imageView = (ImageView)findViewById(R.id.imageView);
+        textView = (TextView)findViewById(R.id.textview);
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String bookID = bookidTextView.getText().toString();
-                BookManager bookManager = BookManager.getInstance(MainActivity.this);
-                bookManager.getBookById(bookID);
+                userPresenter.loadBook();
             }
         });
     }
@@ -56,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements IUserView{
                     "\n简介：" + book.getSummary()
             );
         }
+    }
+    @Override
+    public  void displayError(String errorMsg){
+        textView.setText(errorMsg);
     }
 
 

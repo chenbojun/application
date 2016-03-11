@@ -8,4 +8,5 @@ import com.example.hzchenbojun.myapplication.bean.Book;
 public interface IUserView {
     public String getBookid();
     public void displayBook(Book book);
+    public void displayError(String errorMsg);
 }
