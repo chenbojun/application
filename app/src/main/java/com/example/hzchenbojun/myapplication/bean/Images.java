@@ -3,11 +3,13 @@ package com.example.hzchenbojun.myapplication.bean;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by hzchenbojun on 2016/3/9.
  */
-public class Images {
-
+public class Images implements Serializable{
+    private static final long serialVersionUID = 222L; // 定义序列化ID
     @SerializedName("small")
     @Expose
     private String small;

@@ -5,13 +5,17 @@ package com.example.hzchenbojun.myapplication.bean;
  */
 
 
+        import android.os.Parcel;
+        import android.os.Parcelable;
+
+        import java.io.Serializable;
         import java.util.ArrayList;
         import java.util.List;
         import com.google.gson.annotations.Expose;
         import com.google.gson.annotations.SerializedName;
 
-public class Book {
-
+public class Book implements Serializable{
+    private static final long serialVersionUID = 111L; // 定义序列化ID
     @SerializedName("rating")
     @Expose
     private Rating rating;
